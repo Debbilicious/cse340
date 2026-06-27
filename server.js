@@ -27,16 +27,24 @@ app.set('views', path.join(__dirname, 'src/views'));
 /**
   * Routes
   */
-app.get('/', (req, res) => {
-    res.render('home', { title: 'Home' });
+app.get('/', async (req, res) => {
+    const title = 'Home';
+    res.render('home', { title });
 });
 
-app.get('/organizations', (req, res) => {
-    res.render('organizations', { title: 'Our Partner Organizations' });
+app.get('/organizations', async (req, res) => {
+    const title = 'Our Partner Organizations';
+    res.render('organizations', { title });
 });
 
-app.get('/projects', (req, res) => {
-    res.render('projects', { title: 'Service Projects' });
+app.get('/projects', async (req, res) => {
+    const title = 'Service Projects';
+    res.render('projects', { title });
+});
+
+app.get('/categories', async (req, res) => {
+    const title = 'Service Project Categories';
+    res.render('categories', { title });
 });
 
 app.listen(PORT, () => {
